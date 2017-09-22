@@ -75,7 +75,6 @@ export default class Sticky {
 
   shouldStickyBottom() {
     return (this.getTargetBottomY() >= this.getParentBottomY()
-         && this.getScrollTop() >= this.getTargetTopY()
          && ! this.parent.hasClass('js-sticky-parent')
          && this.isAdded);
   }
@@ -93,7 +92,7 @@ export default class Sticky {
   }
 
   getScrollTop() {
-    return $(window).scrollTop() + this.args.offset;
+    return $(window).scrollTop() + this.args.offset + parseInt(this.target.css('margin-top'));
   }
 
   getParentTopY() {
