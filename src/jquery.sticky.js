@@ -18,4 +18,4 @@ import Sticky from './_sticky.js';
       new Sticky($(e), args);
     });
   };
-});
+})(jQuery);
