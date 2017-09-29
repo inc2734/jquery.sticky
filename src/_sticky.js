@@ -18,13 +18,7 @@ export default class Sticky {
 
     this.isAdded = false;
 
-    this.initialize();
-
-    $(window).scroll(() => {
-      this.initialize();
-    });
-
-    $(window).resize(() => {
+    $(window).on('load scroll resize', () => {
       this.initialize();
     });
   }
