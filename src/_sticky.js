@@ -18,8 +18,12 @@ export default class Sticky {
 
     this.isAdded = false;
 
-    $(window).on('load scroll resize', () => {
+    $(window).on('ready load scroll resize', () => {
       this.initialize();
+    });
+
+    $(window).on('resize', () => {
+      $(window).scrollTop($(window).scrollTop() + 1);
     });
   }
 
