@@ -21,6 +21,7 @@ $ yarn add jquery.sticky
 <script>
 jQuery(function($) {
   $('.sidebar').sticky({
+    berakpoint: 1024, // Optional. over 1024px, fired
     offset: 0 // Optional
   });
 });

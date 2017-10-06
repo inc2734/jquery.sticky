@@ -11,7 +11,8 @@ export default class Sticky {
     this.target = target;
     this.parent = target.parent();
     this.args   = $.extend({
-      offset: 0
+      offset: 0,
+      breakpoint: null
     }, args);
 
     this.placeholder = $('<div class="js-sticky-placeholder"/>');
@@ -28,7 +29,7 @@ export default class Sticky {
   }
 
   initialize() {
-    if ('none' == this.target.css('display')) {
+    if ('none' == this.target.css('display') || (null !== this.args.breakpoint && this.args.breakpoint > $(window).width())) {
       this.parent.removeClass('js-sticky-parent');
       this.target.removeClass('js-sticky-top');
       this.target.removeClass('js-sticky-bottom');
